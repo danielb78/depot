@@ -5,7 +5,7 @@ RSpec.describe "products/new", type: :view do
     assign(:product, Product.new(
       :title => "MyString",
       :description => "MyText",
-      :image_ur => "MyString",
+      :image_url => "MyString",
       :price => "9.99"
     ))
   end
@@ -19,7 +19,7 @@ RSpec.describe "products/new", type: :view do
 
       assert_select "textarea[name=?]", "product[description]"
 
-      assert_select "input[name=?]", "product[image_ur]"
+      assert_select "input[name=?]", "product[image_url]"
 
       assert_select "input[name=?]", "product[price]"
     end

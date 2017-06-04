@@ -1,6 +1,6 @@
-# DEPOT
+# E app
 
-Teach internships about Rails Framework
+Learn Rails Framework
 
 * Ruby version: 2.4.1
 
