@@ -1,24 +1,20 @@
-# README
+# DEPOT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Teach internships about Rails Framework
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version: 2.4.1
 
 * System dependencies
+Ubuntu with mysql, rvm, ruby and next gems bundler, nokogiri and rails
 
-* Configuration
+* Configuration: Install rvm. Install ruby 2.4.1. Clone repo to your projects folder. Go inside depo folder and run `bundle install`.
 
-* Database creation
+* Database creation: From root depo app run `rails db:create`
 
-* Database initialization
+* Database initialization: Run `rails db:migrate`
 
-* How to run the test suite
+* How to run the test suite: Run `rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services (job queues, cache servers, search engines, etc.): Not yet
 
-* Deployment instructions
-
-* ...
+* Deployment instructions: Not yet
