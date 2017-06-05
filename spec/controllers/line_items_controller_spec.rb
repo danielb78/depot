@@ -29,11 +29,11 @@ RSpec.describe LineItemsController, type: :controller do
   # LineItem. As you add validations to LineItem, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    build(:line_item).attributes
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    build(:invalid_line_item).attributes
   }
 
   # This should return the minimal set of values that should be in the session
@@ -76,20 +76,20 @@ RSpec.describe LineItemsController, type: :controller do
     context "with valid params" do
       it "creates a new LineItem" do
         expect {
-          post :create, params: {line_item: valid_attributes}, session: valid_session
+          post :create, params: valid_attributes, session: valid_session
         }.to change(LineItem, :count).by(1)
       end
 
       it "redirects to the created line_item" do
-        post :create, params: {line_item: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(LineItem.last)
+        post :create, params: valid_attributes, session: valid_session
+        expect(response).to redirect_to(LineItem.last.cart)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {line_item: invalid_attributes}, session: valid_session
-        expect(response).to be_success
+        post :create, params: invalid_attributes, session: valid_session
+        expect(response).to redirect_to(action: :new, params: { notice: 'Invalid product' })
       end
     end
   end
