@@ -15,7 +15,7 @@ RSpec.describe 'LineItems', type: :request do
       post line_items_url, params: { product_id: product.id}
       follow_redirect!
       assert_select 'h2', 'Your Cart'
-      assert_select '#main li', 'Title'
+      assert_select '#main li', '1 × Title'
     end
   end
 end
